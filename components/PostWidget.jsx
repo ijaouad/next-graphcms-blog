@@ -4,12 +4,12 @@ import Image from 'next/image'
 import Link from 'next/link'
 import moment from 'moment'
 
-const PostWidget = ({ category, slug }) => {
+const PostWidget = ({ categories, slug }) => {
     const [relatedPosts, setRelatedPosts] = useState([])
 
     useEffect(() => {
         if (slug) {
-            getSimilarPosts(category, slug).then((res) =>  setRelatedPosts(res))
+            getSimilarPosts(categories, slug).then((res) =>  setRelatedPosts(res))
         } else {
             getRecentPosts().then(res => setRelatedPosts(res));
         }
