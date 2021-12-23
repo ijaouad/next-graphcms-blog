@@ -57,8 +57,8 @@ const FeaturedPosts = () => {
     return (
         <div className="mb-8">
             <Carousel infinite responsive={responsive} customLeftArrow={customLeftArrow} customRightArrow={customRightArrow} itemClass='px-4'>
-                {dataLoaded && featuredPosts.map((post) => (
-                    <FeaturedPostCard post={post}/>
+                {dataLoaded && featuredPosts.map((post, index) => (
+                    <FeaturedPostCard key={index} post={post}/>
                 ))}
             </Carousel>
         </div>

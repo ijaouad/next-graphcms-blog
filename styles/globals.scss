@@ -14,7 +14,22 @@ body {
     content: "";
     width: 100%;
     height: 100vh;
-    background: #f8f8f8;
+    background-color:#fc82ff;background-image:  
+    radial-gradient(at 40% 20%, hsla(28,100%,74%,1) 0, transparent 50%),  
+    radial-gradient(at 80% 50%, hsla(340,100%,76%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 50%, hsla(355,85%,93%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 100%, hsla(22,100%,77%,1) 0, transparent 50%),  
+    radial-gradient(at 0% 0%, hsla(343,100%,76%,1) 0, transparent 50%),  
+    radial-gradient(at 64% 0%, rgb(255, 247, 199) 0, transparent 31%),  
+    radial-gradient(at 98% 100%, hsla(189,100%,56%,1) 0, transparent 43%);
+
+    /*background-color:#fc82ff;background-image:  
+    radial-gradient(at 19% 88%, hsla(186,69%,77%,1) 0, transparent 43%),  
+    radial-gradient(at 15% 26%, hsla(238,93%,70%,1) 0, transparent 47%),  
+    radial-gradient(at 55% 89%, hsla(174,81%,77%,1) 0, transparent 52%),  
+    radial-gradient(at 33% 2%, hsla(336,67%,62%,1) 0, transparent 42%),  
+    radial-gradient(at 11% 60%, hsla(221,87%,66%,1) 0, transparent 54%);*/
+    
     position: fixed;
     left: 0;
     top: 0;

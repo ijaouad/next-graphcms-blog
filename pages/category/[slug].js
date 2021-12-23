@@ -2,10 +2,10 @@ import Head from 'next/head';
 import { useRouter } from 'next/router';
 import React from 'react'
 import { Categories, Loader, PostCard } from '../../components'
-import { getCategories, getCategoryPost } from '../../services'
+import { getCategories, getCategoryName, getCategoryPost } from '../../services'
 
-const CategoryPosts = ({ posts }) => {
-
+const CategoryPosts = ({ posts, category }) => {
+    
     const router = useRouter();
     if (router.isFallback) {
         return <Loader />;
@@ -14,8 +14,8 @@ const CategoryPosts = ({ posts }) => {
     return (
         <>
             <Head>
-                <title>category | Next Blog Powered by GraphCMS</title>
-                <link rel="icon" href="/favicon.ico" />
+                <title>{category.name} | Not Just DEV - Blog Powered by Next.js & GraphCMS</title>
+                <link rel="icon" href="/logo.png" />
             </Head>
 
             <div className="container mx-auto px-10 mb-8">
@@ -42,9 +42,12 @@ export default CategoryPosts
 
 export async function getStaticProps({ params }) {
   const posts = await getCategoryPost(params.slug);
+  const category = await getCategoryName(params.slug);
+
+  console.log(category);
 
   return {
-    props: { posts },
+    props: { posts, category },
   };
 }
 
